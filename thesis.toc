@@ -60,14 +60,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Sliding Mode Observer}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Six-Step Commutation}{31}
+\contentsline {subsection}{Sliding mode overview}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Simulink Implementation of Six-Step Commutation}{31}
+\contentsline {section}{\numberline {4.4}Theory behind the sliding mode observer}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Evaluation of Simulink Results}{32}
+\contentsline {subsection}{SMO for estimation of the angular position of the BLDC-rotor}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {7}Testing with Hydraulic Pumps}{33}
+\contentsline {chapter}{\chapternumberline {5}Six-Step Commutation}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {8}Conclusions and Final Remarks}{34}
+\contentsline {section}{\numberline {5.1}Simulink Implementation of Six-Step Commutation}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{35}
+\contentsline {chapter}{\chapternumberline {6}Evaluation of Simulink Results}{36}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {7}Testing with Hydraulic Pumps}{37}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {8}Conclusions and Final Remarks}{38}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{39}

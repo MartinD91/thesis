@@ -411,7 +411,104 @@ The first method...
 \section{Zero-Crossing Detection with Extrapolation}
 
 \section{Sliding Mode Observer}
-\cite{chi2007}
+\subsection{Sliding mode overview}
+ 
+Sliding mode observers is based on a nonlinear control method called sliding mode control (SOC). Some of the advantages of the sliding mode control concept is the method's ability to handle disturbances and modeling uncertainties. This properties makes the SMC a robust control method. The lack of robustness is in some cases a problem, not only for control applications, but also for state estimations. The need for a robust state observer led to the development of the sliding mode observer, \cite{vel_kim_lee2011}.
+Another benefit with sliding mode controllers/observers is that while in sliding mode the state trajectories is limited to a reduced order set. This means that the order of the effective system is reduced and the control/observer problem can be decoupled in to smaller independent subproblems.\\ By changing the system dynamics to a user-defined sliding mode dynamic, the system can be forced to behave in a known manner no matter how complex the system is, \cite{Has1996}. 
+
+\section{Theory behind the sliding mode observer}
+Consider the nonlinear system \eqref{nonlineq1}
+\begin{equation} \label{nonlineq1}
+\dot{x}=f(x,t)+B(x,t)u+h(x,t)
+\end{equation}
+Where $x \in \Re^m $ is the state vector, $u \in \Re^m $ is the control vector and $h \in \Re^m $  is all the disturbances to the system.\\ \\
+If it's assumed that the disturbances  $h(x,t)$ satisfies the condition
+\begin{equation} \label{distrubanceSpan}
+h(x,t)\in span\{B(x,t)\}
+\end{equation}
+Then there exist a control signal $u(x,t)$ that cancels out all the disturbances.
+\begin{equation}\label{controlsignal1}
+B(x,t)u=-h(x,t)
+\end{equation}
+This makes the system invariant to the disturbances $h(x,t)$. 
+Based on \eqref{controlsignal1} the control law can be determined as 
+
+
+\begin{align} \label{controllaw1} \nonumber
+& u_i = \begin{cases}
+u_i^+(x,t) \ \ \ \mbox{if} \ \ \ \sigma_i(x)>0 \\
+u_i^-(x,t) \ \ \ \mbox{if} \ \ \ \sigma_i(x)<0
+\end{cases}
+\ \ \ i=(1,2...m)
+\\
+& \sigma^T=(\sigma_1(x),\sigma_2(x),...,\sigma_m(x))
+\end{align}
+In \eqref{controllaw1} $u_i^+(x,t)$ and $u_i^-(x,t)$ is continuous functions and $u_i^+(x,t) \neq u_i^-(x,t)$, however $u_i(x,t)$ may contain some discontinuities on the set $\sigma_i(x)=0$, but outside the set ($\sigma_i(x) \neq 0$), $\sigma$ is a continuous function.
+The control signal $u_i$ has the input sigma which goes to zero during sliding mode, this causes the output to become discontinuous which means that the output signal will contain very high frequency components. The high frequency components may cause problems, since they amplifies noise and disturbances.  To suppress the influence of noise and other disturbances the gain of the observer has to be high. The disturbances don't have to be measured or estimated since the sliding mode dynamics is independent on the disturbances $h(x,t)$, however to guarantee the sliding mode behavior, the disturbance $h(x,t)$ has to be upper bounded, \cite{chi2007}.\\ \\
+The sliding motion projection of \eqref{nonlineq1} on the set $\sigma(x)$ is descirbed in \eqref{projectionsigma1}, assuming  $\det \big(\frac{\partial \sigma}{\partial x}B\neq 0\big)$ for all state $x$ and time $t$. 
+\begin{equation} \label{projectionsigma1}
+\dot{\sigma}= \frac{\partial \sigma}{\partial x}(f+h) + \frac{\partial \sigma}{\partial x}Bu
+\end{equation}
+If $\dot{\sigma}=0$ then the equivalent control $u_{eq}$ can be calculated.
+\begin{align} \label{equivalentctrl1}
+&0 = \frac{\partial \sigma}{\partial x}(f+h) + \frac{\partial \sigma}{\partial x}Bu \nonumber \\
+&\Rightarrow u=u_{eq}=-\bigg(\frac{\partial \sigma}{\partial x}B\bigg)^{-1}\frac{\partial \sigma}{\partial x}(f+h)
+\end{align}
+To obtain the sliding mode motion inside the sliding set $\sigma=0$, the  equation \eqref{nonlineq1} is substituted into the equation \eqref{equivalentctrl1}. 
+\begin{equation}\label{sm_analysis_eq1}
+\dot{x}=f-B\bigg(\frac{\partial \sigma}{\partial x}B\bigg)^{-1}\frac{\partial \sigma}{\partial x}f
+\end{equation}
+Equation \eqref{sm_analysis_eq1} tends to have a solution $x^*(t)$ if $x$ is inside a boundary of the sliding set $\sigma=0$, the boundary can be defined as $x(t,\Delta)$ where $\Delta >0$. Since the system isn't defined on the sliding set $\sigma=0$, the system is designed in such a way that the states will oscillate around the sliding set using the control signals described in \eqref{controllaw1}. The idea of this is that instead of moving on the sliding set the control algorithm should switch between $u_i^+$ and $u_i^-$ and the two control signals should together form a vector that points along the sliding set, \cite{chi2007}. \\ Ideally the system should switch between the two functions $u_i^+$ and $u_i^-$ exactly when the state is on the sliding set $\sigma=0$ and the switching should be done with an infinite frequency.  In reality this isn't possible since the system contains various imperfections, this causes the state to oscillate with some hysteresis around the sliding set i.e. the boundary of equation \eqref{sm_analysis_eq1} and it is obvious that in reality it isn't possible to switch with an infinite frequency, due to a sampling time $>0$ etc. The non-ideal switching causes the system to get discontinuous behavior. The discontinuous behavior causes the system to get a wide content of frequency components. To get rid of the unwanted high-frequency component the system is filtered through a low pass filter. The low pass filter cancels out the high-frequency component and makes the low-frequency component determine the behavior of the sliding motion. \\ \\
+The first step when creating a sliding mode is to choose a sliding set. The sliding set should be chosen in such a way that the system satisfies the desired design objectives i.e. stability, order reduction, linearization, etc. When a set has been selected a control law is found to generate the sliding motion on the chosen set. The control law forces the system towards the set by directing the state trajectories toward the set and keeping them on it. When the trajectories has reached the set the sliding mode occurs and the trajectories slides towards the orign and through, \cite{Has1996}. \\
+The sliding mode occurs when the state $x(t)$ reaches the sliding set and is forced on it by the discontinuous control. The dynamics of the sliding mode is decided by the switching surface equation and  the control. This is why the approach when designing a sliding mode observer can be split in to two steps. The first is to select the equation of sliding mode i.e. equation \eqref{sm_analysis_eq1}, this equation should describe the dynamics of the motion and make the system satisfy the performance criterion. The second task is to find a discontinuous control that will make sure that the state $x(t)$ is forced towards the sliding set $\sigma(x)=0$ and guarantee existence of the sliding mode inside the set, \cite{chi2007}.      
+\subsection{SMO for estimation of the angular position of the BLDC-rotor}
+While realizing the SMO-based sensorless control of  BLDC there will be some difficulties. One problem that occurs is that for low speeds, the back-EMF is too small to be estimated accurately. This problem is very hard to deal with, but by implementing a starting ramp the motor can be kicked form standstill in to motion and when the motor has gained some speed the sliding mode estimation will take over. Another problem with the sliding mode observer is that it uses a $sign$-function. The $sign$-function may however not work properly when the system is discretized for software implementation. To go around this problem the $sign$-function can be estimated with a small saturation. To compensate for the difference between the gains of the saturation and the $sign$-function the observer gain $k$ has to be increased. \\ \\ 
+The sliding mode observer used in the Simulink model  is based on the BLDC model which is derived in chapter XX. Consider the motor model in alpha-beta frame \eqref{motormodelalphabeta} 
+\begin{equation} \label{motormodelalphabeta}
+\dot{\vec{i}}=-\frac{r_{\alpha \beta s}}{L_{\alpha \beta s}}\vec{i}_{\alpha \beta s}+ \frac{1}{L_{\alpha \beta s}}(\vec{v}^*_{\alpha \beta s}-\vec{e}_{\alpha \beta s})
+\end{equation} 
+If a sliding mode observer is design to fit this equation it's possible to make the estimations equal to the actual values of the estimated variables. This can be achieved by sliding along the set $\sigma=\vec{\hat{i}}-\vec{i}$. 
+\begin{equation} \label{currentest}
+\dot{\vec{\hat{i}}}=-\frac{r_{\alpha \beta s}}{L_{\alpha \beta s}}\hat{\vec{i}}_{\alpha \beta s}+\frac{1}{L_{\alpha \beta s}}(\vec{v}^*_s+l\cdot\vec{Z}_{eq}+\vec{Z})
+\end{equation}
+In \eqref{currentest} 
+
+
+\begin{align}
+&\vec{Z}=-k\cdot sign(\vec{\hat{i}}_s-\vec{i}_s)=\begin{bmatrix}
+-k\cdot sign(\vec{\hat{i}}_\alpha-\vec{i}_\alpha) \nonumber \\
+-k\cdot sign(\vec{\hat{i}}_\beta-\vec{i}_\beta)\label{Zdefine1}
+\end{bmatrix} \\ 
+&\vec{Z}_{eq}=\vec{Z}\frac{\omega_c}{s+\omega_c}
+\end{align}
+
+
+From \eqref{Zdefine1} it's clear that the equivalent control signal $ \vec{Z}_{eq}$ is just $\vec{Z}$ filtered through a low pass filter with the cutoff frequency $\omega_c$.
+By subtracting the motor equation \eqref{motormodelalphabeta} from equation \eqref{currentest} the dynamic sliding mode equation is obtained. For this to be feasible the assumption that $v_s^*=v_{\alpha \beta s}$ must  be made.
+\begin{equation}\label{slidingmodeeq1}
+\dot{\vec{\sigma}}=-\frac{r_{\alpha \beta s}}{L_{\alpha \beta s}}\vec{\sigma}_s+ \frac{1}{L_{\alpha \beta s}}(\vec{e}_{\alpha \beta s}+l\cdot\vec{Z}_{eq}+\vec{Z})
+\end{equation}
+If the sliding set fulfills the constrain below \eqref{sigmaconstraint1}, then sliding mode occurs. The constraint can be held by selecting the switching gain of $\vec{Z}$ ($k$) large enough. 
+\begin{equation}\label{sigmaconstraint1}
+\dot{\sigma}\cdot\sigma <0
+\end{equation} 
+$l$ is a parameter with a value greater than $-1$. $l$ has also an upper constraint, that guarantees the sliding mode to be negative definite and therefore stable \cite{chi2007}.
+\begin{equation}
+k(1+l) > \mid \vec{e}_{\alpha \beta}\mid_{max}
+\end{equation}
+For the sliding mode to occur the constraint above must hold, this means that $k(1+l)$ must be larger than the maximum peak of the back-EMF. 
+If sliding mode occurs in \eqref{slidingmodeeq1}, which is guaranteed if the constants are chosen properly, then the back-EMF can be calculated as in \eqref{emfslide1}
+\begin{equation}\label{emfslide1}
+\vec{e}_{\alpha \beta s}=\begin{bmatrix}
+e_{\alpha s} \\ 
+e_{\beta s}
+\end{bmatrix}=-(1+l)\vec{Z}_{eq}
+\end{equation}
+From the back-EMF equation above the estimated position $\hat{\theta}_r$ is obtained
+\begin{equation}
+\hat{\theta}_r=-\tan\frac{e_{\alpha s}}{e_{\beta s}}
+\end{equation}
+
 
 
 \chapter{Six-Step Commutation}
