@@ -1,0 +1,160 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{ala_kar2014}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Alak{\"u}la}{A.}%
+     {Mats}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Karlsson}{K.}%
+     {Per}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {Department of Industrial Electrical Engineering}%
+    {Automation, Lund University}%
+  }
+  \strng{namehash}{AMKP1}
+  \strng{fullhash}{AMKP1}
+  \field{labelyear}{2014}
+  \field{sortinit}{A}
+  \field{title}{Power Electronics: Devices, Converters, Control and
+  Applications}
+  \field{year}{2014}
+\endentry
+
+\entry{bob2013}{manual}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bobek}{B.}%
+     {Viktor}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {Freescale Semiconductor, Inc.}%
+  }
+  \strng{namehash}{BV1}
+  \strng{fullhash}{BV1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \field{title}{PMSM Electrical Parameters Measurement}
+  \field{year}{2013}
+\endentry
+
+\entry{chi2007}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Chi}{C.}%
+     {Song}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CS1}
+  \strng{fullhash}{CS1}
+  \field{labelyear}{2007}
+  \field{sortinit}{C}
+  \field{title}{POSITION-SENSORLESS CONTROL OF PERMANENT MAGNET SYNCHRONOUS
+  MACHINES OVER WIDE SPEED RANGE}
+  \list{institution}{1}{%
+    {The Ohio State University}%
+  }
+  \field{type}{phdthesis}
+  \field{year}{2007}
+\endentry
+
+\entry{lee_lem_keo}{manual}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Lee}{L.}%
+     {Shiyoung}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lemley}{L.}%
+     {Tom}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Keohane}{K.}%
+     {Gene}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {Magnelab}%
+  }
+  \strng{namehash}{LS+1}
+  \strng{fullhash}{LSLTKG1}
+  \field{labelyear}{2010}
+  \field{sortinit}{L}
+  \field{title}{A COMPARISON STUDY OF THE COMMUTATION METHODS FOR THE
+  THREE-PHASE PERMANENT MAGNET BRUSHLESS DC MOTOR}
+  \field{year}{2010}
+\endentry
+
+\entry{ref_frames}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {MathWorks}{M.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{M1}
+  \strng{fullhash}{M1}
+  \field{labelyear}{2015}
+  \field{sortinit}{M}
+  \field{title}{Alpha-Beta-Zero to dq0, dq0 to Alpha-Beta-Zero}
+  \verb{url}
+  \verb http://se.mathworks.com/help/physmod/sps/powersys/ref/alphabetazerotodq
+  \verb 0dq0toalphabetazero.html
+  \endverb
+  \field{month}{01}
+  \field{year}{2015}
+\endentry
+
+\entry{pyr2009}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pyrh{\"o}nen}{P.}%
+     {Juha}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PJ1}
+  \strng{fullhash}{PJ1}
+  \field{labelyear}{2009}
+  \field{sortinit}{P}
+  \field{title}{Lecture Notes on Electrical Drives}
+  \list{institution}{1}{%
+    {Department of Electrical Engineering, Lappeenranta University of
+  Technology}%
+  }
+  \field{type}{techreport}
+  \field{year}{2009}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
