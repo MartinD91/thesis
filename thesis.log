@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.20)  25 FEB 2015 14:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.20)  25 FEB 2015 14:43
 entering extended mode
 **thesis.tex
 (C:\Users\EAllar\Documents\GitHub\thesis\thesis.tex
@@ -1127,9 +1127,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 55.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 55.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 56.
  [9
 
 ]
@@ -1137,25 +1137,25 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 File: ref_frames_mathworks.jpg Graphic file (type jpg)
 
 <use ref_frames_mathworks.jpg>
-Package pdftex.def Info: ref_frames_mathworks.jpg used on input line 93.
+Package pdftex.def Info: ref_frames_mathworks.jpg used on input line 94.
 (pdftex.def)             Requested size: 227.62204pt x 167.4971pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 94.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 97.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 98.
  [12
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
 
 Underfull \vbox (badness 5726) has occurred while \output is active []
 
@@ -1166,10 +1166,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [16] [17] <rle.png, id=71, 618.81187pt x 575.14874pt>
 File: rle.png Graphic file (type png)
  <use rle.png>
-Package pdftex.def Info: rle.png used on input line 209.
+Package pdftex.def Info: rle.png used on input line 210.
 (pdftex.def)             Requested size: 227.62204pt x 211.56427pt.
  [18]
-Overfull \hbox (5.9553pt too wide) in paragraph at lines 227--228
+Overfull \hbox (5.9553pt too wide) in paragraph at lines 228--229
 \T1/ptm/m/n/10 The fin-ished BLDC model can be seen in fig-ure FIGUR PÅ BLDC SI
 MULINKMOD-
  []
@@ -1178,12 +1178,12 @@ MULINKMOD-
 
 ]
 [24]
-Overfull \hbox (2.34805pt too wide) in paragraph at lines 331--331
+Overfull \hbox (2.34805pt too wide) in paragraph at lines 332--332
 [] 
  []
 
 
-Overfull \hbox (7.44221pt too wide) in paragraph at lines 337--337
+Overfull \hbox (7.44221pt too wide) in paragraph at lines 338--338
 [] 
  []
 
@@ -1194,34 +1194,34 @@ Underfull \vbox (badness 1748) has occurred while \output is active []
 [26] [27] [28] [29]
 
 LaTeX Warning: Citation 'vel_kim_lee2011' on page 30 undefined on input line 41
-6.
+7.
 
 
-LaTeX Warning: Citation 'Has1996' on page 30 undefined on input line 417.
+LaTeX Warning: Citation 'Has1996' on page 30 undefined on input line 418.
 
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 423--426
+Underfull \hbox (badness 10000) in paragraph at lines 424--427
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
+Underfull \hbox (badness 10000) in paragraph at lines 446--450
 
  []
 
 [31]
 
-LaTeX Warning: Citation 'Has1996' on page 32 undefined on input line 462.
+LaTeX Warning: Citation 'Has1996' on page 32 undefined on input line 463.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--464
+Underfull \hbox (badness 10000) in paragraph at lines 461--465
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 465--467
+Underfull \hbox (badness 10000) in paragraph at lines 466--468
 
  []
 
@@ -1238,7 +1238,7 @@ Underfull \vbox (badness 2334) has occurred while \output is active []
 ] [38
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 546.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 547.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -1284,7 +1284,7 @@ nts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/symb
 ol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (39 pages, 366744 bytes).
+Output written on thesis.pdf (39 pages, 366773 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
